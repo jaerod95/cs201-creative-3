@@ -11,7 +11,7 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('sass', function() {
-    return gulp.src('assets/css/sass/**/*.scss')
+    return gulp.src('./assets/css/sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('assets/css'))
         .pipe(browserSync.reload({ stream: true }));
@@ -22,11 +22,11 @@ gulp.task('reload', () => {
 })
 
 gulp.task('sass:watch', () => {
-    gulp.watch('assets/css/sass/**/*.scss', ['sass']);
+    gulp.watch('./assets/css/sass/**/*.scss', ['sass']);
 });
 
 gulp.task('watch', () => {
-    gulp.watch(['./**/*.js', './**/*.html', './**/*.css'], ['reload']);
+    gulp.watch(['./assets/js/*.js', 'index.html', './assets/css/*.css', './assets/img/*.png', './assets/img/*.jpg', './app/**/*.js', './app/**/*.html'], ['reload']);
 });
 
 gulp.task("default", ['browser-sync', 'sass', 'sass:watch', 'watch']);
