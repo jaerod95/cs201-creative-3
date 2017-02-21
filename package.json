@@ -1,0 +1,26 @@
+{
+  "name": "creative3",
+  "version": "1.0.0",
+  "description": "A creative project for cs201R",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaerod95/cs201-creative-3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaerod95/cs201-creative-3/issues"
+  },
+  "homepage": "https://github.com/jaerod95/cs201-creative-3#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "browser-sync": "^2.18.8"
+  }
+}
