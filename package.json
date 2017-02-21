@@ -18,9 +18,7 @@
   "homepage": "https://github.com/jaerod95/cs201-creative-3#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0"
-  },
-  "dependencies": {
+    "gulp-sass": "^3.1.0",
     "browser-sync": "^2.18.8"
   }
 }
