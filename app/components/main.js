@@ -4,7 +4,6 @@ var app = angular.module('Quest', ['ui.router', 'ngAnimate'])
         var knight = "assets/img/stand.gif";
         var level = 1;
         var textNum = 5;
-        var instructions = false;
         return {
             getRandomText: function () {
                 return randomText;
@@ -30,12 +29,6 @@ var app = angular.module('Quest', ['ui.router', 'ngAnimate'])
             },
             setTextNum: function (value) {
                 textNum = value;
-            },
-            getInstructions: function () {
-                return instructions;
-            },
-            toggleInstructions: function() {
-                instructions == true ? instructions = false : instructions = true;
             }
         };
     })
@@ -82,8 +75,7 @@ app.controller('MainCtrl',
                 }, 1500);
             }, 1500);
         }, 1500);
-
-        $scope.instructions = sharedProperties.getInstructions();
+        
         $scope.showInstructions = function () {
             var elem = $document[0].getElementById('instructs');
             elem.style.width = "900px";
