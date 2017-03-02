@@ -79,7 +79,7 @@ app.controller('MainCtrl',
         $scope.getText = function () {
             var text = "";
             $scope.sendRequest(
-                `http://www.randomtext.me/api/lorem/p-${sharedProperties.getTextNum()}/5-10`,
+                "http://www.randomtext.me/api/lorem/p-" + sharedProperties.getTextNum() + "/5-10",
                 "GET",
                 null,
                 function (data) {
