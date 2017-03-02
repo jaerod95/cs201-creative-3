@@ -4,6 +4,7 @@ var app = angular.module('Quest', ['ui.router', 'ngAnimate'])
         var knight = "assets/img/stand.gif";
         var level = 1;
         var textNum = 5;
+        var instructions = false;
         return {
             getRandomText: function () {
                 return randomText;
@@ -29,6 +30,12 @@ var app = angular.module('Quest', ['ui.router', 'ngAnimate'])
             },
             setTextNum: function (value) {
                 textNum = value;
+            },
+            getInstructions: function () {
+                return instructions;
+            },
+            toggleInstructions: function() {
+                instructions == true ? instructions = false : instructions = true;
             }
         };
     })
@@ -70,10 +77,30 @@ app.controller('MainCtrl',
                     $document[0].getElementById('storytext3').style.opacity = 1;
                     $timeout(function () {
                         $document[0].getElementById('startbtn').style.opacity = 1;
+                        $document[0].getElementById('inbtn').style.opacity = 1;
                     }, 1500)
                 }, 1500);
             }, 1500);
         }, 1500);
+
+        $scope.instructions = sharedProperties.getInstructions();
+        $scope.showInstructions = function () {
+            var elem = $document[0].getElementById('instructs');
+            elem.style.width = "900px";
+            elem.style.height = "500px";
+            elem.style.opacity = 1;
+            elem.style.left = "50%";
+            elem.style.top = "50%";
+        }
+
+        $scope.hideInstructions = function () {
+            var elem = $document[0].getElementById('instructs');
+            elem.style.width = "0px";
+            elem.style.height = "0px";
+            elem.style.opacity = 0;
+            elem.style.left = "0%";
+            elem.style.top = "0%";
+        }
 
         $scope.fadeToFight = function () {
             $scope.getText();

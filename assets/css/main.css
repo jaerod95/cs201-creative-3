@@ -17,11 +17,11 @@ body {
   margin-top: 10%;
   text-align: center; }
 
-#start {
+.start {
   margin-top: 20px;
   text-align: center; }
 
-#startbtn {
+.mainbtn {
   opacity: 0;
   padding: 16px 32px;
   text-align: center;
@@ -35,7 +35,7 @@ body {
   color: black;
   border: 2px solid #555555; }
 
-#startbtn:hover {
+.mainbtn:hover {
   background-color: #555555;
   color: white; }
 
@@ -160,3 +160,21 @@ body {
     font-size: 24px;
     font-family: "Comic Sans MS", cursive, sans-serif;
     transition: 1s opacity; }
+
+.instructions {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  margin-left: -450px;
+  border: 10px solid #ccc;
+  border-radius: 10px;
+  margin-top: -250px;
+  transition: 1s all; }
+  .instructions img {
+    width: 100%;
+    height: 100%; }
+  .instructions:hover {
+    cursor: pointer; }

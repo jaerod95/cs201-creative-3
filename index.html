@@ -23,8 +23,14 @@
             <p class="storytext" id='storytext3'>Then it ATTACKED you!</p>
         </div>
 
-        <div id='start'>
-            <a ng-click="fadeToFight()"><button id="startbtn">START FIGHTING!</button></a>
+        <div class='start'>
+            <a ng-click="fadeToFight()"><button class="mainbtn" id="startbtn">START FIGHTING!</button></a>
+        </div>
+        <div class='start'>
+            <button class="mainbtn" ng-click="showInstructions()" id="inbtn">Instructions</button>
+        </div>
+        <div id="instructs" class="instructions">
+            <img ng-click="hideInstructions()" src="assets/img/fight_instructions.png" alt="">
         </div>
     </script>
 
@@ -35,9 +41,7 @@
             <div class="hero">
                 <img id="hero" ng-src="{{knight_img}}" alt="">
             </div>
-            <textarea autofocus class="text_input" onfocus="this.focus();this.select()" ng-keydown="attack($event)">
-                Type the text here to beat the monster...
-                HURRY UP!!!
+            <textarea autofocus class="text_input" ng-keydown="attack($event)">
             </textarea>
             <div class="health">
                 <div class="healthbar">
