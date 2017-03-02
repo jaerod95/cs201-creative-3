@@ -1,0 +1,7 @@
+Essential:
+    Win screen and reset button.
+    Lose screen and reset button.
+    Missing png files?
+
+Optional:
+    Increment the level difficulty
