@@ -39,20 +39,20 @@
             </textarea>
             <div class="health">
                 <div class="healthbar">
-                    <div class="life" ng-style="HERO.healthbar">HEALTH {{HERO.health}}%</div>                    
+                    <div class="life" ng-style="HERO.healthbar"><span>HEALTH {{HERO.health}}%</span></div>                    
                 </div>
             </div>
         </div>
         <div class="monster_side col-md-6">
             <div class="monster">
                 <div>
-                    <img id="hit" ng-show="monsterHit" ng-if="monsterHitDone" class="fade" src="/assets/img/hit.jpg" alt="">
-                    <img src="/assets/img/monster.jpg" alt="">
+                    <img id="hit" ng-show="monsterHit" ng-if="monsterHitDone" class="fade" src="/assets/img/hit.png" alt="">
+                    <img src="/assets/img/monster.png" alt="">
                 </div>
             </div>
             <div class="health">
                 <div class="healthbar">
-                    <div class="life" ng-style="MONSTER.healthbar">HEALTH {{MONSTER.health}}%</div>
+                    <div class="life" ng-style="MONSTER.healthbar"><span>HEALTH {{MONSTER.health}}%</span></div>
                 </div>
             </div>
         </div>
