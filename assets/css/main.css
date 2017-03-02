@@ -41,10 +41,10 @@ body {
 
 .hero_side,
 .monster_side {
-  height: 800px; }
+  height: 600px; }
 
 .text {
-  height: 200px;
+  height: 125px;
   font-family: "Comic Sans MS", cursive, sans-serif; }
   .text p {
     font-family: "Comic Sans MS", cursive, sans-serif;
@@ -53,7 +53,7 @@ body {
 
 .text_input {
   font-family: "Comic Sans MS", cursive, sans-serif;
-  height: 175px;
+  height: 125px;
   margin-top: 25px;
   width: 90%;
   margin-left: 5%;
@@ -66,7 +66,7 @@ body {
 .hero {
   justify-content: center;
   display: flex;
-  height: 300px; }
+  height: 275px; }
 
 .health {
   height: 100px;
@@ -85,9 +85,7 @@ body {
   background: green;
   transition: 1s width;
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around; }
+  height: 100%; }
   .life span {
     position: absolute;
     margin-top: 3px;
@@ -97,7 +95,7 @@ body {
     color: #ddd; }
 
 .monster {
-  height: 700px; }
+  height: 550px; }
   .monster div {
     position: absolute;
     animation-name: monsterFly;
@@ -147,3 +145,18 @@ body {
     margin-left: 10px; }
   100% {
     margin: 0px; } }
+
+.place {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-align: center;
+  width: 500px;
+  padding-top: 50px; }
+  .place p {
+    opacity: 0;
+    color: #eee;
+    font-size: 24px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    transition: 1s opacity; }

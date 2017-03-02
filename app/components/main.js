@@ -46,7 +46,17 @@ var app = angular.module('Quest', ['ui.router', 'ngAnimate'])
                     url: '/fight',
                     templateUrl: '/fight.html',
                     controller: 'FightCtrl'
-                });
+                })
+                .state('win', {
+                    url: '/win',
+                    templateUrl: '/win.html',
+                    controller: 'FinishCtrl'
+                })
+                .state('lose', {
+                    url: '/lose',
+                    templateUrl: '/lose.html',
+                    controller: 'FinishCtrl'
+                })
             $urlRouterProvider.otherwise('home');
         }
     ])
@@ -67,6 +77,7 @@ app.controller('MainCtrl',
 
         $scope.fadeToFight = function () {
             $scope.getText();
+            $document[0].body.style.background = "white";
             $document[0].body.style.transition = '2s all';
             $document[0].body.style.opacity = 0;
 
@@ -164,11 +175,28 @@ app.controller('FightCtrl',
             $document[0].body.style.background = 'black';
             $timeout(function () {
                 if (status == 'win') {
+                    sharedProperties.setLevel(sharedProperties.getLevel() + 1);
+                    $document[0].body.style.opacity = 1;
                     $state.go('win');
                 } else {
+                    sharedProperties.setLevel(1);
+                    $document[0].body.style.opacity = 1;
                     $state.go('lose');
                 }
 
             }, 1000)
         }
+    });
+
+    app.controller('FinishCtrl', 
+    function($scope, $timeout, $document) {
+        $timeout(function() {
+            $document[0].getElementById('finishText1').style.opacity = 1;
+            $timeout(function() {
+                $document[0].getElementById('finishText2').style.opacity = 1;
+                $timeout(function() {
+                    $document[0].getElementById('startbtn').style.opacity = 1;
+                }, 1000)
+            }, 1000)
+        }, 1000);
     });
