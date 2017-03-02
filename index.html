@@ -1,36 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Angular Index</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="assets/libs/angular.min.js"></script>
+    <script src="assets/libs/angular-ui-router.min.js"></script>
+    <script src="assets/libs/angular-animate.js"></script>
     <script src="app/components/main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
-<body ng-app="Quest" ng-controller="MainCtrl">
-{{text}}
 
+<body ng-app="Quest" ng-controller="MainCtrl" class="row">
+    <ui-view></ui-view>
+
+    <script type="text/ng-template" id="/begin.html">
+        <div id='story'>
+            <p class="storytext" id='storytext1'>Once upon a time...</p>
+            <p class="storytext" id='storytext2'>there was a monster which everybody was afraid of...</p>
+            <p class="storytext" id='storytext3'>Then it ATTACKED you!</p>
+        </div>
+
+        <div id='start'>
+            <a ng-click="fadeToFight()"><button id="startbtn">START FIGHTING!</button></a>
+        </div>
+    </script>
 
     <script type="text/ng-template" id="/fight.html">
-    <div class="hero_side">
-        <div class="text">
+        <div class="hero_side col-md-6">
+            <div class="text" ng-bind-html="randomText">
+            </div>
+            <div class="hero">
+                <img id="hero" ng-src="{{knight_img}}" alt="">
+            </div>
+            <textarea autofocus class="text_input" ng-keydown="attack($event)">
 
+            </textarea>
+            <div class="health">
+                <div class="healthbar">
+                    <div class="life" ng-style="HERO.healthbar">HEALTH {{HERO.health}}%</div>                    
+                </div>
+            </div>
         </div>
-        <div class="hero">
-
+        <div class="monster_side col-md-6">
+            <div class="monster">
+                <div>
+                    <img id="hit" ng-show="monsterHit" ng-if="monsterHitDone" class="fade" src="/assets/img/hit.png" alt="">
+                    <img src="/assets/img/monster.png" alt="">
+                </div>
+            </div>
+            <div class="health">
+                <div class="healthbar">
+                    <div class="life" ng-style="MONSTER.healthbar">HEALTH {{MONSTER.health}}%</div>
+                </div>
+            </div>
         </div>
-        <div class="hero-health">
-
-        </div>
-    </div>
-    <div class="monster_side">
-        <div class="monster">
-
-        </div>
-        <div class="monster_health">
-
-        </div>
-    </div>
     </script>
 </body>
+
 </html>
