@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Angular Index</title>
-    <link rel="stylesheet" href="assets/libs/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
     <script src="assets/libs/angular.min.js"></script>
+    <script src="app/components/main.js"></script>
 </head>
-<body>
+<body ng-app="Quest" ng-controller="MainCtrl">
+{{text}}
+
+
+    <script type="text/ng-template" id="/fight.html">
     <div class="hero_side">
         <div class="text">
 
@@ -26,5 +31,6 @@
 
         </div>
     </div>
+    </script>
 </body>
 </html>
