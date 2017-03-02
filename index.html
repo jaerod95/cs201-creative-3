@@ -35,8 +35,9 @@
             <div class="hero">
                 <img id="hero" ng-src="{{knight_img}}" alt="">
             </div>
-            <textarea autofocus class="text_input" ng-keydown="attack($event)">
-
+            <textarea autofocus class="text_input" onfocus="this.focus();this.select()" ng-keydown="attack($event)">
+                Type the text here to beat the monster...
+                HURRY UP!!!
             </textarea>
             <div class="health">
                 <div class="healthbar">
